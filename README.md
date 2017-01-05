@@ -16,13 +16,17 @@ Tested on:
 * Adaptec 3405 controller
 * Zabbix 2.4
 
-## arcconf
+## Limitation
 
-Script use a **arcconf** utility by Adaptec from https://hwraid.le-vert.net/. 
+* 1 controller only (ID 1)
+* up to 10 logical devices only (ID 0-9)
+* up to 10 physical drives only (ID 0-9)
 
 ## Installation
 
 ### arcconf
+
+Script use a **arcconf** utility by Adaptec from https://hwraid.le-vert.net/. 
 
     wget -O - https://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | sudo apt-key add -
     echo "deb http://hwraid.le-vert.net/debian jessie main" | sudo tee /etc/apt/sources.list.d/hwraid.list
