@@ -10,6 +10,7 @@ Tested on:
 * arcconf Version 2.02 (B22404)
 * Ubuntu 16.04.1 LTS
 * Adaptec 3405 controller
+* Zabbix 2.4
 
 ## arcconf
 
