@@ -30,6 +30,8 @@ Assuming arrconf is installed to **/usr/sbin/arcconf**.
 
     arcconf: /usr/sbin/arcconf
 
+If not — consider to change path to the earcconf executable in the script.
+
 ### Script download
 
 Assuming current user is in the *sudo* group.
