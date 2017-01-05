@@ -1,0 +1,3 @@
+Defaults:zabbix !requiretty
+
+zabbix ALL=(ALL) NOPASSWD:/usr/sbin/arcconf
