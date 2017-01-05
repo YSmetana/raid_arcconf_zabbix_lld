@@ -86,9 +86,9 @@ arcconf need *sudo*.
 
 ### Zabbix GUI
 
-Import template.
+Import template **raid_arcconf_zabbix_lld.xml** into Zabbix: "Configuration -> Templates -> Import.". You shuld see template named **Service_Adaptec_Raid**.
 
-Add host to template.
+Add host to the Template, or link template to the Host.
 
 --------------------------------
 
