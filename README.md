@@ -1,29 +1,44 @@
-Zabbix LLD and monitoring script for Adaptec RAID controllers via **arcconf** utility.
+# Zabbix LLD and monitoring for Adaptec RAID controllers
 
-It is a JSON-formatted data for Zabbix LLD and **arcconf** output parser.
+It is:
 
-Logical (virtual) drives LLD:
+* JSON-formatted data for Zabbix LLD
+* **arcconf** output parser for Zabbix
+* Zabbix template
 
-``raid_arcconf_zabbix_lld.py --verbose ld all lld``:
+Tested on:
+* arcconf Version 2.02 (B22404)
+* Ubuntu 16.04.1 LTS
+* Adaptec 3405 controller
 
-    {"data": [{"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-r1-3t", "OBJ_ID": 0}, {"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-v-s03", "OBJ_ID": 1}]}
+## arcconf
 
-To get a desired value you can use any "key" available in arcconf output (see "arcconf output example" chapter at the end of this 'readme').
+Script use a **arcconf** utility by Adaptec from https://hwraid.le-vert.net/. 
 
-``raid_arcconf_zabbix_lld.py ld 1 "Status of Logical Device"``
+## Installation
 
-    Optimal
+### arcconf
 
-## arcconf installation
+    wget -O - https://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | sudo apt-key add -
+    echo "deb http://hwraid.le-vert.net/debian jessie main" | sudo tee /etc/apt/sources.list.d/hwraid.list
+    apt update
+    apt install arcconf
 
-wget -O - https://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | sudo apt-key add -
-echo "deb http://hwraid.le-vert.net/debian jessie main" | sudo tee /etc/apt/sources.list.d/hwraid.list
-apt update
-apt install arcconf
+Assuming arrconf is installed to **/usr/sbin/arcconf**.
 
-## Script download
+``whereis arcconf``:
 
+    arcconf: /usr/sbin/arcconf
+
+### Script download
+
+Assuming current user is in the *sudo* group.
+
+    sudo mkdir /opt/zabbix_scripts
+    sudo chown zabbix:sudo /opt/zabbix_scripts
+    sudo chmod 775 /opt/zabbix_scripts
     cd /opt/zabbix_scripts
+    
     git clone git@github.com:YSmetana/raid_arcconf_zabbix_lld.git
 
     sudo chown -R zabbix:sudo raid_arcconf_zabbix_lld
@@ -31,19 +46,21 @@ apt install arcconf
     cd raid_arcconf_zabbix_lld
     sudo chmod 774 *.py
 
-## Sudo
+### Sudo
+
+arcconf need *sudo*.
 
     sudo chown root:root raid_arcconf_zabbix_lld_sudo
     sudo chmod 440 raid_arcconf_zabbix_lld_sudo
     sudo ln -s /opt/zabbix_scripts/raid_arcconf_zabbix_lld/raid_arcconf_zabbix_lld_sudo /etc/sudoers.d/
     sudo sudo -k
 
-## Zabbix
+### Zabbix "UserParameter"
 
     sudo ln -s /opt/zabbix_scripts/raid_arcconf_zabbix_lld/raid_arcconf_zabbix_lld.conf /etc/zabbix/zabbix_agentd.conf.d/
     sudo service zabbix-agent restart
 
-## Test
+### Manual test
 
 ``sudo -u zabbix bash``
 
@@ -56,7 +73,31 @@ apt install arcconf
 
     raid.arcconf[ld,1,Status of Logical Device]   [t|Optimal]
 
-### Adapter (controller) information
+### Zabbix GUI
+
+Import template.
+
+Add host to template.
+
+## Appendix
+
+### Using script for debug purpose
+
+Logical (virtual) drives LLD:
+
+``raid_arcconf_zabbix_lld.py --verbose ld all lld``:
+
+    {"data": [{"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-r1-3t", "OBJ_ID": 0}, {"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-v-s03", "OBJ_ID": 1}]}
+
+To get a desired value you can use any "key" available in arcconf output (see "arcconf output example" below).
+
+``raid_arcconf_zabbix_lld.py ld 1 "Status of Logical Device"``
+
+    Optimal
+
+### arcconf example output
+
+#### Adapter (controller) information
 
 ``arcconf GETCONFIG 1 AD``:
 
@@ -106,7 +147,7 @@ Controller information
    Capacity remaining                       : 100 percent
    Time remaining (at current draw)         : 3 days, 1 hours, 52 minutes
 
-### Logical (virtual) disk information
+#### Logical (virtual) disk information
 
 ``arcconf GETCONFIG 1 LD 0``
 
@@ -140,7 +181,7 @@ Logical Device number 0
    Segment 0                                : Present (2861588MB, SATA, HDD, Channel:0, Device:10)      WD-WCC4N0RUUPKF
    Segment 1                                : Missing
 
-### Physical disk information
+#### Physical disk information
 
 ``arcconf GETCONFIG 1 PD``
 
