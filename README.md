@@ -21,6 +21,7 @@ Tested on:
 * 1 controller only (ID 1)
 * up to 10 logical devices only (ID 0-9)
 * up to 10 physical drives only (ID 0-9)
+* parameters values reads and been stored as raw string, not numbers (e.q. "33 C/ 91 F (Normal)")
 
 ## Installation
 
