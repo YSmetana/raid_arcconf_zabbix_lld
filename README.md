@@ -79,13 +79,17 @@ Import template.
 
 Add host to template.
 
+--------------------------------
+
 ## Appendix
 
-### Using script for debug purpose
+### Using script for debugging purpose
+
+Short help: ``raid_arcconf_zabbix_lld.py --help``.
 
 Logical (virtual) drives LLD:
 
-``raid_arcconf_zabbix_lld.py --verbose ld all lld``:
+``raid_arcconf_zabbix_lld.py --verbose ld -1 lld``:
 
     {"data": [{"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-r1-3t", "OBJ_ID": 0}, {"OBJ_TYPE": "ld", "OBJ_ALIAS": "zeta-v-s03", "OBJ_ID": 1}]}
 
