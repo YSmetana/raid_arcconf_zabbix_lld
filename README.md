@@ -105,182 +105,182 @@ To get a desired value you can use any "key" available in arcconf output (see "a
 
 ``arcconf GETCONFIG 1 AD``:
 
-Controllers found: 1
-----------------------------------------------------------------------
-Controller information
-----------------------------------------------------------------------
-   Controller Status                        : Optimal
-   Channel description                      : SAS/SATA
-   Controller Model                         : Adaptec 3405
-   Controller Serial Number                 : 8C16103DF1D
-   Controller World Wide Name               : 50000D11009C9400
-   Controller Alarm                         : Enabled
-   Physical Slot                            : 3
-   Temperature                              : 35 C/ 95 F (Normal)
-   Installed memory                         : 128 MB
-   Global task priority                     : High
-   Host bus type                            : unknown
-   Host bus speed                           : 0 MHz
-   Host bus link width                      : 0 bit(s)/link(s)
-   PCI Device ID                            : 645
-   Stayawake period                         : Disabled
-   Spinup limit internal drives             : 0
-   Spinup limit external drives             : 0
-   Defunct disk drive count                 : 1
-   Logical devices/Failed/Degraded          : 2/0/1
-   NCQ status                               : Enabled
-   --------------------------------------------------------
-   RAID Properties
-   --------------------------------------------------------
-   Copyback                                 : Disabled
-   Automatic Failover                       : Enabled
-   Background consistency check             : Disabled
-   Background consistency check period      : 30
-   --------------------------------------------------------
-   Controller Version Information
-   --------------------------------------------------------
-   BIOS                                     : 5.2-0 (17342)
-   Firmware                                 : 5.2-0 (17342)
-   Driver                                   : 1.2-1 (41010)
-   Boot Flash                               : 5.2-0 (17342)
-   --------------------------------------------------------
-   Controller Battery Information
-   --------------------------------------------------------
-   Status                                   : Optimal
-   Over temperature                         : No
-   Capacity remaining                       : 100 percent
-   Time remaining (at current draw)         : 3 days, 1 hours, 52 minutes
+    Controllers found: 1
+    ----------------------------------------------------------------------
+    Controller information
+    ----------------------------------------------------------------------
+       Controller Status                        : Optimal
+       Channel description                      : SAS/SATA
+       Controller Model                         : Adaptec 3405
+       Controller Serial Number                 : 8C16103DF1D
+       Controller World Wide Name               : 50000D11009C9400
+       Controller Alarm                         : Enabled
+       Physical Slot                            : 3
+       Temperature                              : 35 C/ 95 F (Normal)
+       Installed memory                         : 128 MB
+       Global task priority                     : High
+       Host bus type                            : unknown
+       Host bus speed                           : 0 MHz
+       Host bus link width                      : 0 bit(s)/link(s)
+       PCI Device ID                            : 645
+       Stayawake period                         : Disabled
+       Spinup limit internal drives             : 0
+       Spinup limit external drives             : 0
+       Defunct disk drive count                 : 1
+       Logical devices/Failed/Degraded          : 2/0/1
+       NCQ status                               : Enabled
+       --------------------------------------------------------
+       RAID Properties
+       --------------------------------------------------------
+       Copyback                                 : Disabled
+       Automatic Failover                       : Enabled
+       Background consistency check             : Disabled
+       Background consistency check period      : 30
+       --------------------------------------------------------
+       Controller Version Information
+       --------------------------------------------------------
+       BIOS                                     : 5.2-0 (17342)
+       Firmware                                 : 5.2-0 (17342)
+       Driver                                   : 1.2-1 (41010)
+       Boot Flash                               : 5.2-0 (17342)
+       --------------------------------------------------------
+       Controller Battery Information
+       --------------------------------------------------------
+       Status                                   : Optimal
+       Over temperature                         : No
+       Capacity remaining                       : 100 percent
+       Time remaining (at current draw)         : 3 days, 1 hours, 52 minutes
 
 #### Logical (virtual) disk information
 
 ``arcconf GETCONFIG 1 LD 0``
 
-Controllers found: 1
-----------------------------------------------------------------------
-Logical device information
-----------------------------------------------------------------------
-Logical Device number 0
-   Logical Device name                      : zeta-r1-3t
-   Block Size of member drives              : 512 Bytes
-   RAID level                               : 1
-   Unique Identifier                        : B715F832
-   Status of Logical Device                 : Degraded
-   Additional details                       : Initialized with Build/Clear
-   Size                                     : 2856950 MB
-   Parity space                             : 2856960 MB
-   Interface Type                           : SAS/SATA
-   Device Type                              : HDD
-   Read-cache setting                       : Enabled
-   Read-cache status                        : On
-   Write-cache setting                      : On when protected by battery/ZMM
-   Write-cache status                       : On
-   Partitioned                              : Yes
-   Protected by Hot-Spare                   : No
-   Bootable                                 : Yes
-   Failed stripes                           : No
-   Power settings                           : Disabled
-   --------------------------------------------------------
-   Logical Device segment information
-   --------------------------------------------------------
-   Segment 0                                : Present (2861588MB, SATA, HDD, Channel:0, Device:10)      WD-WCC4N0RUUPKF
-   Segment 1                                : Missing
+    Controllers found: 1
+    ----------------------------------------------------------------------
+    Logical device information
+    ----------------------------------------------------------------------
+    Logical Device number 0
+       Logical Device name                      : zeta-r1-3t
+       Block Size of member drives              : 512 Bytes
+       RAID level                               : 1
+       Unique Identifier                        : B715F832
+       Status of Logical Device                 : Degraded
+       Additional details                       : Initialized with Build/Clear
+       Size                                     : 2856950 MB
+       Parity space                             : 2856960 MB
+       Interface Type                           : SAS/SATA
+       Device Type                              : HDD
+       Read-cache setting                       : Enabled
+       Read-cache status                        : On
+       Write-cache setting                      : On when protected by battery/ZMM
+       Write-cache status                       : On
+       Partitioned                              : Yes
+       Protected by Hot-Spare                   : No
+       Bootable                                 : Yes
+       Failed stripes                           : No
+       Power settings                           : Disabled
+       --------------------------------------------------------
+       Logical Device segment information
+       --------------------------------------------------------
+       Segment 0                                : Present (2861588MB, SATA, HDD, Channel:0, Device:10)      WD-WCC4N0RUUPKF
+       Segment 1                                : Missing
 
 #### Physical disk information
 
 ``arcconf GETCONFIG 1 PD``
 
-Controllers found: 1
-----------------------------------------------------------------------
-Physical Device information
-----------------------------------------------------------------------
-      Device #0
-         Device is a Hard drive
-         State                              : Online
-         Block Size                         : 512 Bytes
-         Supported                          : Yes
-         Transfer Speed                     : SATA 3.0 Gb/s
-         Reported Channel,Device(T:L)       : 0,10(10:0)
-         Vendor                             : WDC
-         Model                              : WD30EFRX-68EUZN0
-         Firmware                           : 82.00A82
-         Serial number                      : WD-WCC4N0RUUPKF
-         Reserved Size                      : 4739480 KB
-         Used Size                          : 2856960 MB
-         Unused Size                        : 64 KB
-         Total Size                         : 2861588 MB
-         Write Cache                        : Enabled (write-back)
-         FRU                                : None
-         S.M.A.R.T.                         : No
-         S.M.A.R.T. warnings                : 0
-         SSD                                : No
-         Temperature                        : Not Supported
-         NCQ status                         : Enabled
-      ----------------------------------------------------------------
-      Device Phy Information                
-      ----------------------------------------------------------------
-         Phy #0
-            PHY Identifier                  : 0
-            SAS Address                     : 5001517507FE6003
-            Attached PHY Identifier         : 2
-            Attached SAS Address            : 5001517507FE6000
+    Controllers found: 1
+    ----------------------------------------------------------------------
+    Physical Device information
+    ----------------------------------------------------------------------
+          Device #0
+             Device is a Hard drive
+             State                              : Online
+             Block Size                         : 512 Bytes
+             Supported                          : Yes
+             Transfer Speed                     : SATA 3.0 Gb/s
+             Reported Channel,Device(T:L)       : 0,10(10:0)
+             Vendor                             : WDC
+             Model                              : WD30EFRX-68EUZN0
+             Firmware                           : 82.00A82
+             Serial number                      : WD-WCC4N0RUUPKF
+             Reserved Size                      : 4739480 KB
+             Used Size                          : 2856960 MB
+             Unused Size                        : 64 KB
+             Total Size                         : 2861588 MB
+             Write Cache                        : Enabled (write-back)
+             FRU                                : None
+             S.M.A.R.T.                         : No
+             S.M.A.R.T. warnings                : 0
+             SSD                                : No
+             Temperature                        : Not Supported
+             NCQ status                         : Enabled
+          ----------------------------------------------------------------
+          Device Phy Information                
+          ----------------------------------------------------------------
+             Phy #0
+                PHY Identifier                  : 0
+                SAS Address                     : 5001517507FE6003
+                Attached PHY Identifier         : 2
+                Attached SAS Address            : 5001517507FE6000
 
-      Device #1
-         Device is a Hard drive
-         State                              : Online
-         Block Size                         : 512 Bytes
-         Supported                          : Yes
-         Transfer Speed                     : SATA 3.0 Gb/s
-         Reported Channel,Device(T:L)       : 0,11(11:0)
-         Vendor                             : HUA72201
-         Model                              : 0CLA330
-         Firmware                           : JP4OA3NB
-         Serial number                      : JPW9P0N0139JZD
-         Reserved Size                      : 538264 KB
-         Used Size                          : 953344 MB
-         Unused Size                        : 64 KB
-         Total Size                         : 953869 MB
-         Write Cache                        : Enabled (write-back)
-         FRU                                : None
-         S.M.A.R.T.                         : No
-         S.M.A.R.T. warnings                : 0
-         SSD                                : No
-         Temperature                        : Not Supported
-         NCQ status                         : Enabled
-      ----------------------------------------------------------------
-      Device Phy Information                
-      ----------------------------------------------------------------
-         Phy #0
-            PHY Identifier                  : 0
-            SAS Address                     : 5001517507FE6004
-            Attached PHY Identifier         : 3
-            Attached SAS Address            : 5001517507FE6000
+          Device #1
+             Device is a Hard drive
+             State                              : Online
+             Block Size                         : 512 Bytes
+             Supported                          : Yes
+             Transfer Speed                     : SATA 3.0 Gb/s
+             Reported Channel,Device(T:L)       : 0,11(11:0)
+             Vendor                             : HUA72201
+             Model                              : 0CLA330
+             Firmware                           : JP4OA3NB
+             Serial number                      : JPW9P0N0139JZD
+             Reserved Size                      : 538264 KB
+             Used Size                          : 953344 MB
+             Unused Size                        : 64 KB
+             Total Size                         : 953869 MB
+             Write Cache                        : Enabled (write-back)
+             FRU                                : None
+             S.M.A.R.T.                         : No
+             S.M.A.R.T. warnings                : 0
+             SSD                                : No
+             Temperature                        : Not Supported
+             NCQ status                         : Enabled
+          ----------------------------------------------------------------
+          Device Phy Information                
+          ----------------------------------------------------------------
+             Phy #0
+                PHY Identifier                  : 0
+                SAS Address                     : 5001517507FE6004
+                Attached PHY Identifier         : 3
+                Attached SAS Address            : 5001517507FE6000
 
-      Device #2
-         Device is a Hard drive
-         State                              : Failed
-         Block Size                         : Unknown
-         Supported                          : Yes
-         Reported Channel,Device(T:L)       : 0,13(13:0)
-         Vendor                             : 
-         Model                              : 
-         Firmware                           : 
-         World-wide name                    : 0000000000000000
-         Total Size                         : 0 MB
-         Write Cache                        : Unknown
-         FRU                                : None
-         S.M.A.R.T.                         : No
-         S.M.A.R.T. warnings                : 0
-         SSD                                : No
-         Temperature                        : Not Supported
-      ----------------------------------------------------------------
-      Device Phy Information                
-      ----------------------------------------------------------------
-         No Phy information available       
+          Device #2
+             Device is a Hard drive
+             State                              : Failed
+             Block Size                         : Unknown
+             Supported                          : Yes
+             Reported Channel,Device(T:L)       : 0,13(13:0)
+             Vendor                             : 
+             Model                              : 
+             Firmware                           : 
+             World-wide name                    : 0000000000000000
+             Total Size                         : 0 MB
+             Write Cache                        : Unknown
+             FRU                                : None
+             S.M.A.R.T.                         : No
+             S.M.A.R.T. warnings                : 0
+             SSD                                : No
+             Temperature                        : Not Supported
+          ----------------------------------------------------------------
+          Device Phy Information                
+          ----------------------------------------------------------------
+             No Phy information available       
 
-      Device #3
-         Device is an Enclosure Services Device
-         Reported Channel,Device(T:L)       : 2,0(0:0)
-         Type                               : SAF-TE
-         Vendor                             : ESG-SHV.
-         Model                              : SCA HSBP M13....
-         Firmware                           : 2.05
+          Device #3
+             Device is an Enclosure Services Device
+             Reported Channel,Device(T:L)       : 2,0(0:0)
+             Type                               : SAF-TE
+             Vendor                             : ESG-SHV.
+             Model                              : SCA HSBP M13....
+             Firmware                           : 2.05
