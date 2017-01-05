@@ -29,7 +29,7 @@ apt install arcconf
     sudo chown -R zabbix:sudo raid_arcconf_zabbix_lld
     sudo chmod 775 raid_arcconf_zabbix_lld
     cd raid_arcconf_zabbix_lld
-    sudo chown 774 *.py
+    sudo chmod 774 *.py
 
 ## Sudo
 
@@ -47,7 +47,7 @@ apt install arcconf
 
 ``sudo -u zabbix bash``
 
-``zabbix_agentd -t "raid.arcconf[ad,all,lld]"``
+``zabbix_agentd -t "raid.arcconf[ad,-1,lld]"``
 
     raid.arcconf[ad,all,lld]                      [t|{"data": [{"{#OBJ_ALIAS}": "Adaptec 3405", "{#OBJ_TYPE}": "ad", "{#OBJ_ID}": 1}]}]
 
