@@ -82,10 +82,10 @@ def run(command):
         return False
 
 def col_value(data, key, index=0):
-    """ Parse data as columns and return 'value' for given 'key'.
+    """ Parse data as columns and returns 'value' for given 'key'.
 
     Args: 
-        data    (str): raw output of 'arconf', separated by ' : '.
+        data    (str): raw output of 'arconf'.
         key     (str): key to search for.
         index   (int): if data consist of repeatable parts (multiple keys) - return N's key value. 
 
@@ -105,6 +105,29 @@ def col_value(data, key, index=0):
                 
     # Nothing found?
     return False
+
+def last_value(data, key, index=0):
+    """" Parse data to find the 'key' and returns the last digit/word in the line.
+
+    Args:
+        data    (str): raw output of 'arconf'.
+        key     (str): key to search for.
+        index   (int): if data consist of repeatable parts (multiple keys) - return N's key value.
+
+    Returns:
+        last digit/word in the line.
+    """
+
+    col_index = 0
+
+    for line in data.splitlines():
+        if key in line:
+            if col_index == index:
+                return line.split()[-1]
+
+    # Nothing found?
+    return False
+
 
 if args.obj_type == 'ad':
 
@@ -145,7 +168,7 @@ if args.obj_type == 'ld':
         
         for ld_num in range(10): # 0-9
 
-            if col_value(res, 'Status of Logical Device', ld_num):
+            if last_value(res, 'Logical Device number %s' %ld_num):
                 obj_data = {}
                 obj_data['{#OBJ_ID}'] = ld_num
                 obj_data['{#OBJ_TYPE}'] = 'ld'
