@@ -14,13 +14,14 @@ Tested on:
 * arcconf Version 2.02 (B22404)
 * Ubuntu 16.04.1 LTS
 * Adaptec 3405 controller
-* Zabbix 2.4
+* Zabbix Server 2.4
 
 ## Limitation
 
 * 1 controller only (ID 1)
 * up to 10 logical devices only (ID 0-9)
 * up to 10 physical drives only (ID 0-9)
+* parameters values reads and being stored as raw string, not numbers (e.q. "33 C/ 91 F (Normal)")
 
 ## Installation
 
@@ -86,9 +87,9 @@ arcconf need *sudo*.
 
 ### Zabbix GUI
 
-Import template.
+Import template **raid_arcconf_zabbix_lld.xml** into Zabbix: "Configuration -> Templates -> Import.". You shuld see template named **Service_Adaptec_Raid**.
 
-Add host to template.
+Add host to the Template, or link template to the Host.
 
 --------------------------------
 
