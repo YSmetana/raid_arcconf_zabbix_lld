@@ -97,10 +97,14 @@ def col_value(data, key, index=0):
 
     for line in data.splitlines():
         columns = line.split(' : ')
+        col_num = len(columns)
         col_key = columns[0].strip()
         if col_key == key:
             if col_index == index:
-                return columns[1].strip()
+                if col_num == 2:
+                    return columns[1].strip()
+                elif col_num == 3:
+                    return columns[1].strip() + ' ' + columns[2].strip()
             col_index += 1
                 
     # Nothing found?

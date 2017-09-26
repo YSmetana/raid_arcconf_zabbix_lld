@@ -742,12 +742,12 @@ https://github.com/YSmetana/raid_arcconf_zabbix_lld</description>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Logical device {#OBJ_ID} {#OBJ_ALIAS} write-cache setting</name>
+                            <name>Logical device {#OBJ_ID} {#OBJ_ALIAS} write-cache status</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>raid.arcconf[ld,{#OBJ_ID},Write-cache setting]</key>
+                            <key>raid.arcconf[ld,{#OBJ_ID},Write-cache status]</key>
                             <delay>3600</delay>
                             <history>30</history>
                             <trends>365</trends>
@@ -805,7 +805,7 @@ https://github.com/YSmetana/raid_arcconf_zabbix_lld</description>
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Service_Adaptec_Raid:raid.arcconf[ld,{#OBJ_ID},Write-cache setting].str(On)}=0</expression>
+                            <expression>{Service_Adaptec_Raid:raid.arcconf[ld,{#OBJ_ID},Write-cache status].str(On)}=0</expression>
                             <name>LD {#OBJ_ID} {#OBJ_ALIAS} write-cache disabled on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
